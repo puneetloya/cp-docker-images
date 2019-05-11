@@ -38,7 +38,7 @@ clean-containers:
 				docker rm -f $${container} || exit 1 ; \
   done
 	# Remove dangling volumes
-	docker volume ls -q -f dangling=true | xargs docker volume rm || true;
+	#docker volume ls -q -f dangling=true | xargs docker volume rm || true;
 
 clean-images:
 	for image in `docker images -q -f label=io.confluent.docker.build.number | uniq` ; do \

@@ -33,5 +33,9 @@ if [ "$KAFKA_JMX_PORT" ]; then
   export KAFKA_JMX_OPTS="$KAFKA_JMX_OPTS -Djava.rmi.server.hostname=$KAFKA_JMX_HOSTNAME -Dcom.sun.management.jmxremote.local.only=false -Dcom.sun.management.jmxremote.rmi.port=$JMX_PORT -Dcom.sun.management.jmxremote.port=$JMX_PORT"
 fi
 
+if ["KAFKA_PROMETHEUS_OPTS"]; then
+  export KAFKA_JMX_OPTS="$KAFKA_JMX_OPTS -javaagent:/usr/share/java/jmx_prometheus_javaagent-0.11.0.jar=8080:/etc/confluent/docker/prometheus.yml"
+fi
+
 echo "===> Launching ${COMPONENT} ... "
 exec "${COMPONENT}"-server-start /etc/"${COMPONENT}"/"${COMPONENT}".properties

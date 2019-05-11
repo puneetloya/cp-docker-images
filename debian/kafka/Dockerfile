@@ -14,7 +14,6 @@
 # limitations under the License.
 
 FROM confluentinc/cp-base
-
 ARG COMMIT_ID=unknown
 LABEL io.confluent.docker.git.id=$COMMIT_ID
 ARG BUILD_NUMBER=-1
