@@ -57,7 +57,7 @@ ENV CONFLUENT_DEB_VERSION="1"
 ENV PROMETHEUS_VERSION="0.11.0"
 
 # Zulu
-ENV ZULU_OPENJDK_VERSION="9=9.0.7.1"
+ENV ZULU_OPENJDK_VERSION="8=8.17.0.3"
 
 # This affects how strings in Java class files are interpreted.  We want UTF-8 and this is the only locale in the
 # base image that supports it
