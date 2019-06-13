@@ -3,5 +3,5 @@ log4j.rootLogger={{ env["KAFKA_TOOLS_LOG4J_LOGLEVEL"] | default('WARN') }}, stde
 
 log4j.appender.stderr=org.apache.log4j.ConsoleAppender
 log4j.appender.stderr.layout=org.apache.log4j.PatternLayout
-log4j.appender.stderr.layout.ConversionPattern=[%d] %p %m (%c)%n
+log4j.appender.stderr.layout.ConversionPattern={"log_level":"%p","timestamp":"%d{ISO8601}","debug_thread":"%t","file":"%F", "line":"%L","message":"%m"}%n
 log4j.appender.stderr.Target=System.err
